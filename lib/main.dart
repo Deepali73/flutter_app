@@ -1,72 +1,52 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    MaterialApp(
+  runApp(DeepaliDemoPhone());
+}
+
+class DeepaliDemoPhone extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Deepali Demo Phone',
       debugShowCheckedModeBanner: false,
-      home: Center(
-        child: Container(
-          width: 300, // Simulated phone width
-          height: 600, // Simulated phone height
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(35),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black26,
-                blurRadius: 25,
-                offset: Offset(0, 15),
-              ),
-            ],
-            border: Border.all(color: Colors.black12),
+      home: Scaffold(
+        backgroundColor: Colors.grey[200], // light background
+        appBar: AppBar(
+          backgroundColor: Colors.deepPurple,
+          title: Center(
+            child: Text(
+              '📱 Deepali\'s Demo Phone',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
           ),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(35),
-            child: Scaffold(
-              backgroundColor: Color(0xFFF0F4F8),
-              appBar: AppBar(
-                backgroundColor: Colors.deepPurple,
-                centerTitle: true,
-                title: Text(
-                  "📱 Deepali's Demo Phone",
+        ),
+        body: Container(
+          width: double.infinity,
+          padding: EdgeInsets.all(20),
+          color: Colors.white,
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.phone_android, size: 100, color: Colors.deepPurple),
+                SizedBox(height: 20),
+                Text(
+                  'Hi 👋 Welcome to Deepali\'s Mobile App!',
                   style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
+                    fontSize: 22,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.deepPurple,
                   ),
+                  textAlign: TextAlign.center,
                 ),
-              ),
-              body: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(Icons.phone_android, size: 80, color: Colors.deepPurple),
-                    SizedBox(height: 20),
-                    Text(
-                      "Welcome to Deepali's Demo Phone!",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 22,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.deepPurple,
-                      ),
-                    ),
-                    SizedBox(height: 10),
-                    Text(
-                      "Made with 💜 using Flutter",
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.grey[700],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              ],
             ),
           ),
         ),
       ),
-    ),
-  );
+    );
+  }
 }
 
 
